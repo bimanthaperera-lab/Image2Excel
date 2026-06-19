@@ -60,3 +60,39 @@ VITE_API_BASE_URL=http://127.0.0.1:8000
 - `GET /health` - backend status
 - `POST /api/ocr` - upload an image and get Python OCR text plus Gemini table JSON
 - `POST /api/ocr/excel` - upload an image and download the Gemini-shaped table as `.xlsx`
+
+## Project Structure
+
+```text
+Image2Excel/
+├── .github/
+│   └── workflows/
+│       └── ci-cd.yml        # GitHub Actions CI/CD pipeline
+├── backend/
+│   ├── app/
+│   │   ├── __init__.py      # App initialization
+│   │   ├── config.py        # Environment variables & configuration
+│   │   ├── excel.py         # Excel generation logic
+│   │   ├── gemini.py        # Gemini API integration for JSON table
+│   │   ├── main.py          # FastAPI application & endpoints
+│   │   ├── ocr.py           # Tesseract OCR extraction logic
+│   │   └── schemas.py       # Pydantic models
+│   └── tests/
+│       ├── test_excel.py    # Unit tests for excel generation
+│       ├── test_gemini.py   # Unit tests for Gemini parsing
+│       ├── test_main.py     # API endpoint tests
+│       └── test_ocr.py      # Unit tests for OCR processing
+├── src/
+│   ├── App.jsx              # Main React component
+│   ├── main.jsx             # React entry point
+│   └── styles.css           # Global CSS styles
+├── index.html               # Vite HTML entry point
+├── package.json             # Node.js dependencies & scripts
+├── pnpm-lock.yaml           # pnpm package lockfile
+├── requirements.txt         # Python dependencies
+├── Dockerfile               # Multi-stage Docker build
+├── .env.example             # Example environment variables
+├── .gitignore               # Git ignore rules
+├── .dockerignore            # Docker ignore rules
+└── README.md                # Project documentation
+```
