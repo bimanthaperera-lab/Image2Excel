@@ -1,0 +1,55 @@
+<!doctype html>
+<html class="scroll-smooth" lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OpticSheet AI | Image to Excel OCR</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&family=Space+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#006e2f",
+              secondary: "#1f6c3a",
+              "primary-container": "#22c55e",
+              "secondary-container": "#a4f1b2",
+              "on-secondary-container": "#24703e",
+              surface: "#f8f9ff",
+              "surface-container-lowest": "#ffffff",
+              "surface-container-low": "#eff4ff",
+              "surface-container": "#e5eeff",
+              "surface-container-high": "#dce9ff",
+              "surface-variant": "#d3e4fe",
+              "on-surface": "#0b1c30",
+              "on-surface-variant": "#3d4a3d",
+              outline: "#6d7b6c",
+              "outline-variant": "#bccbb9",
+              "on-primary": "#ffffff"
+            },
+            fontFamily: {
+              body: ["Hanken Grotesk", "sans-serif"],
+              display: ["TF Monobreak", "Space Mono", "monospace"],
+              technical: ["JetBrains Mono", "monospace"]
+            },
+            borderRadius: {
+              DEFAULT: "0.125rem",
+              lg: "0.25rem",
+              xl: "0.5rem"
+            }
+          },
+        },
+      };
+    </script>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  </head>
+  <body class="bg-surface text-on-surface">
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

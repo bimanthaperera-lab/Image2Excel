@@ -1,0 +1,128 @@
+.material-symbols-outlined {
+  font-variation-settings:
+    "FILL" 0,
+    "wght" 400,
+    "GRAD" 0,
+    "opsz" 24;
+}
+
+body {
+  font-family: "Hanken Grotesk", sans-serif;
+  background: #f8f9ff;
+  color: #0b1c30;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.bg-surface {
+  background-color: #f8f9ff;
+}
+
+.bg-surface\/95 {
+  background-color: rgb(248 249 255 / 0.95);
+}
+
+.bg-primary {
+  background-color: #006e2f;
+}
+
+.bg-secondary {
+  background-color: #1f6c3a;
+}
+
+.bg-primary-container {
+  background-color: #22c55e;
+}
+
+.bg-secondary-container {
+  background-color: #a4f1b2;
+}
+
+.bg-surface-container-low {
+  background-color: #eff4ff;
+}
+
+.bg-surface-container-lowest {
+  background-color: #ffffff;
+}
+
+.bg-surface-container {
+  background-color: #e5eeff;
+}
+
+.text-primary {
+  color: #006e2f;
+}
+
+.text-on-primary {
+  color: #ffffff;
+}
+
+.text-on-surface {
+  color: #0b1c30;
+}
+
+.text-on-surface-variant {
+  color: #3d4a3d;
+}
+
+.text-on-secondary-container {
+  color: #24703e;
+}
+
+.border-primary {
+  border-color: #006e2f;
+}
+
+.border-outline {
+  border-color: #6d7b6c;
+}
+
+.border-outline-variant {
+  border-color: #bccbb9;
+}
+
+.decoration-primary\/30 {
+  text-decoration-color: rgb(0 110 47 / 0.3);
+}
+
+.hover\:bg-secondary:hover {
+  background-color: #1f6c3a;
+}
+
+.hover\:border-primary:hover {
+  border-color: #006e2f;
+}
+
+.hover\:text-primary:hover {
+  color: #006e2f;
+}
+
+.hover\:bg-secondary-container:hover {
+  background-color: #a4f1b2;
+}
+
+.font-display {
+  font-family: "TF Monobreak", "Space Mono", monospace;
+}
+
+.technical-grid {
+  background-image:
+    linear-gradient(#e2e8f0 1px, transparent 1px),
+    linear-gradient(90deg, #e2e8f0 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.technical-grid-primary {
+  background-image:
+    linear-gradient(rgb(255 255 255 / 0.28) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(255 255 255 / 0.28) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.drag-over {
+  background-color: #f0fdf4;
+  transform: scale(1.01);
+}
