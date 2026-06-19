@@ -86,3 +86,11 @@ async def ocr_image_to_excel(
         media_type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
         headers={"Content-Disposition": 'attachment; filename="image2excel.xlsx"'},
     )
+
+import os
+from fastapi.staticfiles import StaticFiles
+
+# Serve the frontend dist folder if it exists
+if os.path.isdir("dist"):
+    app.mount("/", StaticFiles(directory="dist", html=True), name="static")
+
