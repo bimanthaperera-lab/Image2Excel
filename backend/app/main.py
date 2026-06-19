@@ -1,4 +1,7 @@
-from fastapi import Depends, FastAPI, File, HTTPException, UploadFile, status
+from fastapi import Depends, FastAPI, File, HTTPException, UploadFile, status, Request
+from slowapi import Limiter, _rate_limit_exceeded_handler
+from slowapi.util import get_remote_address
+from slowapi.errors import RateLimitExceeded
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import StreamingResponse
 
@@ -10,6 +13,10 @@ from backend.app.schemas import OCRResponse
 
 
 app = FastAPI(title="Image2Excel API", version="0.1.0")
+
+limiter = Limiter(key_func=get_remote_address)
+app.state.limiter = limiter
+app.add_exception_handler(RateLimitExceeded, _rate_limit_exceeded_handler)
 
 settings = get_settings()
 app.add_middleware(
@@ -64,7 +71,9 @@ def health() -> dict[str, str]:
 
 
 @app.post("/api/ocr", response_model=OCRResponse)
+@limiter.limit("5/minute")
 async def ocr_image(
+    request: Request,
     file: UploadFile = File(...),
     settings: Settings = Depends(get_settings),
 ) -> OCRResponse:
@@ -73,7 +82,9 @@ async def ocr_image(
 
 
 @app.post("/api/ocr/excel")
+@limiter.limit("5/minute")
 async def ocr_image_to_excel(
+    request: Request,
     file: UploadFile = File(...),
     settings: Settings = Depends(get_settings),
 ) -> StreamingResponse:
